@@ -28,7 +28,7 @@ for filepath in glob.glob("corpus/akatsuki/*.txt"):
         documents.append(Document(page_content=f.read(), metadata={"source": filepath}))
 
 print("2. Splitting into chunks...")
-text_splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=50)
+text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=100)
 chunks = text_splitter.split_documents(documents)
 
 print("3. Creating vector database (FAISS)... This might take a few seconds.")
@@ -59,7 +59,7 @@ while True:
     print("Searching for information and generating answer...")
 
     # Retrieval
-    retrieved_docs = vectorstore.similarity_search(question, k=4)
+    retrieved_docs = vectorstore.similarity_search(question, k=10)
     context = "\n\n".join([doc.page_content for doc in retrieved_docs])
 
     # Building the prompt
