@@ -1,0 +1,29 @@
+.env# ------------------------
+# Fichiers de configuration et secrets
+# ------------------------
+# NE JAMAIS PUBLIER LA CLÉ API (Exigence du TP)
+.env
+
+# ------------------------
+# Fichiers Python et environnements
+# ------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.venv/
+env/
+
+# ------------------------
+# Bases de données vectorielles (optionnel)
+# ------------------------
+# Si jamais tu décides de sauvegarder ta base FAISS localement plus tard
+faiss_index/
+*.faiss
+*.pkl
+
+# ------------------------
+# Fichiers système
+# ------------------------
+.DS_Store
+Thumbs.db
