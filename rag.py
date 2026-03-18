@@ -44,15 +44,15 @@ print("="*50)
 # II & III. RETRIEVAL & GENERATION (Interactive Loop)
 # ---------------------------------------------------------
 while True:
-    # Get user input from the terminal
-    question = input("\n👉 Your question: ")
+    # On précise directement dans le texte comment quitter
+    question = input("\n👉 Your question about the Akatsuki's clan (type 'exit' to quit): ")
 
-    # Check if the user wants to quit
+    # Si l'utilisateur tape exit ou quit, on arrête la boucle
     if question.lower() in ['exit', 'quit']:
-        print("Goodbye! Shutting down the RAG...")
+        print("👋 Goodbye! Shutting down the RAG...")
         break
         
-    # Skip if the user just pressed Enter without typing anything
+    # On ignore si l'utilisateur appuie juste sur Entrée sans rien écrire
     if not question.strip():
         continue
 
